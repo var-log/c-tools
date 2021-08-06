@@ -5,25 +5,25 @@ int main (int argc, char** argv)
 {
     if (argc != 3)
     {
-        printf("Usage ./move <input file> <output file> ie: ./move /home/user/docs/input.txt /home/user/input.txt\n");
+        printf("Usage ./move <input file> <output destination> ie: ./move /home/user/docs/file.txt /home/user/file.txt\n");
     }
     else
     {
-        FILE* ptr = fopen(argv[1], "r");
-        if (ptr == NULL)
+        FILE* input = fopen(argv[1], "r");
+        if (input == NULL)
         {
             printf("File not found.\n");
         }
         else
         {
             char ch;
-            FILE* ptr2 = fopen(argv[2], "w");
-            while((ch = fgetc(ptr)) != EOF)
+            FILE* output = fopen(argv[2], "w");
+            while((ch = fgetc(input)) != EOF)
             {
-                fputc(ch, ptr2);
+                fputc(ch, output);
             }
-            fclose(ptr);
-            fclose(ptr2);
+            fclose(input);
+            fclose(output);
         }
         remove(argv[1]);
     }

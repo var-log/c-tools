@@ -9,7 +9,7 @@ int main (int argc, char** argv)
     }
     else
     {
-        FILE* ptr = fopen(argv[1], "r");
+        FILE* input = fopen(argv[1], "r");
         if (ptr == NULL)
         {
             printf("File not found.\n");
@@ -17,13 +17,13 @@ int main (int argc, char** argv)
         else
         {
             char ch;
-            FILE* ptr2 = fopen(argv[2], "w");
+            FILE* output = fopen(argv[2], "w");
             while((ch = fgetc(ptr)) != EOF)
             {
                 fputc(ch, ptr2);
             }
-            fclose(ptr);
-            fclose(ptr2);
+            fclose(input);
+            fclose(output);
         }
     }
 }

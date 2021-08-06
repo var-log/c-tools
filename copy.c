@@ -18,7 +18,7 @@ int main (int argc, char** argv)
         {
             char ch;
             FILE* output = fopen(argv[2], "w");
-            while((ch = fgetc(ptr)) != EOF)
+            while((ch = fgetc(input)) != EOF)
             {
                 fputc(ch, output);
             }

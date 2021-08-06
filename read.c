@@ -4,25 +4,25 @@
 int main (int argc, char** argv)
 {
     if (argc != 2)
-        {
-            printf("Usage ./read <input file> ie: ./read input.txt");
-        }
+    {
+        printf("Usage ./read <input file> ie: ./read file.txt\n");
+    }
     else
     {
-        FILE* ptr = fopen(argv[1], "r");
-        if (ptr == NULL)
+        FILE* input = fopen(argv[1], "r");
+        if (input == NULL)
         {
             printf("File not found.\n");
         }
         else
         {
             char ch;
-            while((ch = fgetc(ptr)) != EOF)
+            while((ch = fgetc(input)) != EOF)
             {
                 printf("%c", ch);
             }
             printf("\n");
-            fclose(ptr);
+            fclose(input);
         }
     }
 }

@@ -10,7 +10,7 @@ int main (int argc, char** argv)
     else
     {
         FILE* input = fopen(argv[1], "r");
-        if (ptr == NULL)
+        if (input == NULL)
         {
             printf("File not found.\n");
         }
@@ -20,7 +20,7 @@ int main (int argc, char** argv)
             FILE* output = fopen(argv[2], "w");
             while((ch = fgetc(ptr)) != EOF)
             {
-                fputc(ch, ptr2);
+                fputc(ch, output);
             }
             fclose(input);
             fclose(output);

@@ -5,11 +5,11 @@ int main (int argc, char** argv)
 {
     if (argc != 2)
     {
-        printf("Usage ./create <input file> ie: ./create input.txt\n");
+        printf("Usage ./create <file> ie: ./create newfile.txt\n");
     }
     else
     {
-        FILE* ptr = fopen(argv[1], "w");
-        fclose(ptr);
+        FILE* output = fopen(argv[1], "w");
+        fclose(output);
     }
 }

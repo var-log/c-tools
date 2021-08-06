@@ -5,7 +5,7 @@ int main (int argc, char** argv)
 {
     if (argc != 2)
     {
-        printf("Usage ./delete <input file> ie: ./delete input.txt\n");
+        printf("Usage ./delete <file> ie: ./delete file.txt\n");
     }
     else
     {
